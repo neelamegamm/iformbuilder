@@ -1,0 +1,71 @@
+<div class="container-fluid px-4">
+
+   <div class="d-flex justify-content-between align-items-center">
+      <h2 class="py-3 m-0">User List</h2>
+ <!-- Create button user create -->
+      <div class="text-right">
+         <button mat-raised-button (click)="addUser()" class="btn btn-primary btn-sm">
+            Create
+         </button>
+      </div>
+   </div>
+
+   <!-- Data Length Checking -->
+   <div *ngIf="dataSource.length>0">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+         <!-- ID Column -->
+         <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID.</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+         </ng-container>
+         <!-- First Name Column -->
+         <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef>First Name</th>
+            <td mat-cell *matCellDef="let element">{{element.first_name}}</td>
+         </ng-container>
+         <!-- Last Name Column -->
+         <ng-container matColumnDef="last_name">
+            <th mat-header-cell *matHeaderCellDef>Last Name</th>
+            <td mat-cell *matCellDef="let element">{{element.last_name}}</td>
+         </ng-container>
+         <!-- E-Mail Column -->
+         <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef>E-Mail</th>
+            <td mat-cell *matCellDef="let element">{{element.email}}</td>
+         </ng-container>
+         <!-- Phone Column -->
+         <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef>Phone</th>
+            <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+         </ng-container>
+         <!-- Designation Column -->
+         <ng-container matColumnDef="designation">
+            <th mat-header-cell *matHeaderCellDef>Designation</th>
+            <td mat-cell *matCellDef="let element">{{element.designation}}</td>
+         </ng-container>
+         <!-- Date of Birth Column -->
+         <ng-container matColumnDef="date_of_birth">
+            <th mat-header-cell *matHeaderCellDef>Date of Birth</th>
+            <td mat-cell *matCellDef="let element">{{element.date_of_birth | date : 'dd/MMMM/YYYY'}}</td>
+         </ng-container>
+         <!-- Experience Column -->
+         <ng-container matColumnDef="experience">
+            <th mat-header-cell *matHeaderCellDef>Experience</th>
+            <td mat-cell *matCellDef="let element">{{element.experience}}</td>
+         </ng-container>
+      
+         <!-- Comments Column -->
+         <ng-container matColumnDef="comments">
+            <th mat-header-cell *matHeaderCellDef>Comments</th>
+            <td mat-cell *matCellDef="let element">{{element.comments}}</td>
+         </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+   </div>
+   <!-- Record Zero -->
+   <div *ngIf="!loader && dataSource.length==0">
+      <h3>No Data Found</h3>
+   </div>
+</div>
+<app-loading [loader]="loader"></app-loading>

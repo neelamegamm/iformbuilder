@@ -1,0 +1,82 @@
+
+
+h1{
+	color: #768E56;
+	float:left;
+	width: 100%;
+}
+label{
+  margin-bottom: 10px;
+}
+.h1tm{
+	font-size: 12px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+#ex1Slider .slider-selection {
+	background: #BABABA;
+}
+ 
+#custom-handle {
+    width: 3em;
+    height: 1.6em;
+    top: 50%;
+    margin-top: -.8em;
+    text-align: center;
+    line-height: 1.6em;
+}
+
+.IformBuilder_form, footer{
+	margin: 0 auto;
+	float: none;
+	padding-bottom:20px;
+}
+
+footer{
+	text-align: center;
+}
+
+.error {
+	border-color: #ff3333 !important;
+}
+.correct{
+	border: 1px solid #ccc;
+}
+label span,legend span,.req,#errorAdd{
+	color: #ff3333;
+}
+#errorAdd{
+    margin-bottom: 0px;
+}
+
+.demo-button {
+    cursor: pointer;
+  padding: 10px;
+  background: #188ff6;
+  border-radius: 13px;
+  color: white;
+  border: 2px solid white;
+}
+
+.demo-reset-button {
+    cursor: pointer;
+  padding: 10px;
+  background: #03c8ff;
+  border-radius: 13px;
+  color: white; 
+  border: 2px solid white;
+}
+
+.demo-cancel-button {
+    cursor: pointer;
+  padding: 10px;
+  background: #ff473d;
+  border-radius: 13px;
+  color: white;
+  border: 2px solid white;
+}
+
+.demo-button:disabled {
+    background-color: #8f9497;
+ }

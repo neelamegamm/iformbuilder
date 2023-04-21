@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.loadWrapper {
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 99999;
+}
+
+.mat-h2,
+.mat-title,
+.mat-typography .mat-h2,
+.mat-typography .mat-title,
+.mat-typography h2 {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.mat-table {
+    width: 100%;
+    background-color: #fff;
+}
+
+.mat-cell,
+.mat-footer-cell {
+    color: #808080;
+}
+
+th.mat-header-cell {
+    padding: 18px 10px 14px 25px !important;
+    background: #6c7ae0 !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #fff !important;
+    text-transform: uppercase;
+}
+
+.mat-table tbody tr td {
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+th.mat-header-cell:hover {
+    background: #7d88e3 !important;
+}
+
+td.mat-cell,
+td.mat-footer-cell {
+    background-color: #fff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #808080 !important;
+}
+
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+    padding: 10px !important;
+}
+
+th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type {
+    padding-left: 10px !important;
+}
+
+.mat-table tr td:hover {
+    background-color: #fff7db !important;
+    color: #000 !important
+}
+
+.spinner-container {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}

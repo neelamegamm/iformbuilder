@@ -1,0 +1,25 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-container {
+    padding-left: 16px;
+    padding-top: 16px;
+  }
+  
+  .demo-button-container {
+    padding: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+  }
+
+  .demo-button {
+    cursor: pointer;
+  padding: 10px;
+  background: #188ff6;
+  border-radius: 13px;
+  color: white;
+  border: 2px solid white;
+}

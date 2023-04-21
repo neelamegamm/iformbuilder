@@ -1,0 +1,157 @@
+<div class="container-fluid px-4">
+   <div class="row mt-3">
+      <div class="d-flex justify-content-between align-items-center">
+         <h2 class="py-3 m-0">Create User</h2>
+         <!-- Back button return user list  -->
+         <div class="text-right">
+            <button mat-raised-button (click)="cancelForm()" class="btn btn-secondary btn-sm">
+               Back
+            </button>
+         </div>
+      </div>
+      <div class="col-md-8 p-3">
+         <p id="errorAdd" class="row">{{commonError}}</p>
+         <form novalidate [formGroup]="createUserForm">
+            <div class="row">
+               <!-- First Name Field -->
+
+               <div class="form-group col-6">
+                  <label for="formGroupFirstNameInput">First Name<span class="mx-1">*</span></label>
+                  <input type="text" formControlName="first_name" name="firstName" class="form-control"
+                     id="formGroupFirstNameInput" placeholder="First Name">
+                  <div
+                     *ngIf="createUserForm.controls['first_name'].invalid && (createUserForm.controls['first_name'].dirty || createUserForm.controls['first_name'].touched)">
+                     <p id="errorAdd" class="row" *ngIf="createUserForm.controls['first_name'].errors.required">Please
+                        enter first name.</p>
+                  </div>
+               </div>
+               <!-- Last Name Field -->
+               <div class="form-group col-6">
+                  <label for="formGroupLastNameInput">Last name<span class="mx-1">*</span></label>
+                  <input type="text" formControlName="last_name" name="lastName" class="form-control"
+                     id="formGroupLastNameInput" placeholder="Last Name">
+                  <div
+                     *ngIf="createUserForm.controls['last_name'].invalid && (createUserForm.controls['last_name'].dirty || createUserForm.controls['last_name'].touched)">
+                     <p id="errorAdd" class="row" *ngIf="createUserForm.controls['last_name'].errors.required">Please
+                        enter last name.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <!-- Email Field -->
+               <div class="form-group col-6">
+                  <label for="inputEmail3">Email<span class="mx-1">*</span></label>
+                  <input type="email" formControlName="email" name="email" class="form-control" id="inputEmail3"
+                     placeholder="Email">
+                  <div
+                     *ngIf="createUserForm.controls['email'].invalid && (createUserForm.controls['email'].dirty || createUserForm.controls['email'].touched)">
+                     <p id="errorAdd" class="row" *ngIf="createUserForm.controls['email'].errors.required">Please enter
+                        email.</p>
+                  </div>
+               </div>
+               <!-- Phone Number Field -->
+               <div class="form-group col-6">
+                  <label for="tel-input">Phone Number<span class="mx-1">*</span></label>
+                  <div class="">
+                     <input class="form-control" formControlName="phone" name="phone" type="tel" value="" id="tel-input"
+                        placeholder="5555555555" [(ngModel)]="number">
+                     <div
+                        *ngIf="createUserForm.controls['phone'].invalid && (createUserForm.controls['phone'].dirty || createUserForm.controls['phone'].touched)">
+                        <p id="errorAdd" class="row" *ngIf="createUserForm.controls['phone'].errors.required">Please
+                           enter phone number.</p>
+                        <p id="errorAdd" class="row"
+                           *ngIf="createUserForm.controls['phone'].errors?.minlength || createUserForm.controls['phone'].errors?.maxlength">
+                           Please enter 10 digit phone number.</p>
+                        <p id="errorAdd" class="row" *ngIf="createUserForm.controls['phone'].errors?.pattern">Please
+                           enter only numeric.</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <!-- Zip Code Field -->
+               <div class="form-group col-6">
+                  <label for="zip-input">Zip Code<span class="mx-1">*</span></label>
+                  <div class="">
+                     <input class="form-control" formControlName="zip_code" name="zipcode" type="number_format" value=""
+                        id="zip-input" placeholder="Zip">
+                     <div
+                        *ngIf="createUserForm.controls['zip_code'].invalid && (createUserForm.controls['zip_code'].dirty || createUserForm.controls['zip_code'].touched)">
+                        <p id="errorAdd" class="row" *ngIf="createUserForm.controls['zip_code'].errors.required">Please
+                           enter zip code.</p>
+                        <p id="errorAdd" class="row"
+                           *ngIf="createUserForm.controls['zip_code'].errors?.minlength || createUserForm.controls['zip_code'].errors?.maxlength">
+                           Please enter 5 digit zip code.</p>
+                        <p id="errorAdd" class="row" *ngIf="createUserForm.controls['zip_code'].errors?.pattern">Please
+                           enter only numeric.</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Designation Field -->
+               <div class="form-group col-6">
+                  <label class="mr-sm-2" for="inlineFormCustomSelect">Designation<span class="mx-1">*</span></label>
+                  <select class="custom-select mb-2 mr-sm-2 mb-sm-0 form-control" formControlName="designation"
+                     name="preference" id="inlineFormCustomSelect">
+                     <option value="" selected>Choose</option>
+                     <option value="Manager">Manager</option>
+                     <option value="Team Leader">Team Leader</option>
+                     <option value="Developer">Developer</option>
+                     <option value="Designer">Designer</option>
+                     <option value="Tester">Tester</option>
+                     <option value="Business Analyst">Business Analyst</option>
+                  </select>
+                  <div
+                     *ngIf="createUserForm.controls['designation'].invalid && (createUserForm.controls['designation'].dirty || createUserForm.controls['designation'].touched)">
+                     <p id="errorAdd" class="row" *ngIf="createUserForm.controls['designation'].errors.required">Please
+                        select designation.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <!-- Date of Birth Field -->
+               <div class="form-group col-6">
+                  <label class="control-label" for="date">Date of Birth<span class="mx-1">*</span></label>
+                  <input class="form-control" id="date" formControlName="date_of_birth" name="date"
+                     placeholder="MM/DD/YYY" type="date" />
+                  <div
+                     *ngIf="createUserForm.controls['date_of_birth'].invalid && (createUserForm.controls['date_of_birth'].dirty || createUserForm.controls['date_of_birth'].touched)">
+                     <p id="errorAdd" class="row" *ngIf="createUserForm.controls['date_of_birth'].errors.required">
+                        Please enter date of birth.</p>
+                  </div>
+               </div>
+               <!-- Experience Field -->
+               <div class="form-group col-6" id="slider">
+                  <label class="form-check-label">
+                     Experience
+                  </label>
+                  <input class="form-control" min="0" type="number" id="experience" formControlName="experience"
+                     name="experience" value="" />
+               </div>
+            </div>
+            <div class="row">
+
+
+               <!-- Comment Field -->
+               <div class="form-group col-12">
+                  <label for="commentTextarea">Comment</label>
+                  <textarea class="form-control" formControlName="comments" name="comments" id="commentTextarea"
+                     rows="3"></textarea>
+               </div>
+            </div>
+            <!-- Submit Button -->
+            <div class="d-flex justify-content-end align-items-center">
+               <button type="button" id="cancel" name="cancel" class="btn btn-secondary btn-sm me-3"
+                  (click)="cancelForm()">Cancel</button>
+               <!-- Reset Button -->
+               <button type="button" id="reset" name="reset" class="btn btn-info btn-sm me-3"
+                  (click)="resetForm()">Reset</button>
+               <!-- Cancel Button -->
+
+               <button type="submit" id="submit" [disabled]="!this.createUserForm.valid" name="submit"
+                  class="btn btn-primary btn-sm" (click)="submitForm()">Submit</button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+<app-loading [loader]="loader"></app-loading>
